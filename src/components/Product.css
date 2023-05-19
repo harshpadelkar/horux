@@ -1,0 +1,42 @@
+.blogs .box-container .box {
+  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.blogs .box-container .box .image {
+  height: 250px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.blogs .box-container .box .image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.blogs .box-container .box:hover .image img {
+  transform: scale(1.2);
+  transition: all 0.4s;
+}
+
+.blogs .box-container .box .content {
+  padding: 20px;
+}
+
+.blogs .box-container .box .content .productTitle {
+  font-size: 25px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.blogs .box-container .box .content .productTitle:hover {
+  color: #d3ad7f;
+  cursor: pointer;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ccc;
+  padding: 10px 0;
+}

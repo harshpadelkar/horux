@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+Demo: https://sudhir9297.github.io/misfit-product/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![misfit-product](https://user-images.githubusercontent.com/19578447/206888725-18004b51-f882-4f6c-bbe3-e1ea8e8eb559.png)
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Install Misfit-product with npm
 
-### `npm start`
+First remove below line from package.json
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+  "homepage": "https://sudhir9297.github.io/misfit-product",
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+its due to the paths of model and HDR map,
+And Now run below command in project
 
-### `npm test`
+```bash
+  npm install
+  npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# How to make it work with your glb files
 
-### `npm run build`
+Well its super easy, here are few steps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### **Step1:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+add your .glb file in public folder and name give it a desired name.
+for example i'll name it `new.glb`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### **Step2:**
 
-### `npm run eject`
+now go to `/src/Layout/canvas.jsx` and on line no. 125 replace `const chair = 'chairs.glb';`
+with `const chair = 'new.glb';`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### **Step3:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+now lets assume if my model( new.glb ) have two meshes and want to affect both of them
+(let's name them as `first_mesh_name` and `second_mesh_name`)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+now go to `/src/data/index.js`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+each object has a property called **itemList** which contains mesh name as **upholstry** and they contain what they are affecting ... so as per demo its `color`.
 
-## Learn More
+so just replace it with your mesh names as shown below.
+Yes Yes! you can add as many as you need.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+itemList: {
+      first_mesh_name: {
+        color: '#00ff00',
+      },
+      second_mesh_name: {
+        color: '#ff0000',
+      },
+    }
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**NOTE:** The function which apply color runs in two loops so its `O(n^2)` so use wisely.
