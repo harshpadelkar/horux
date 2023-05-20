@@ -47,12 +47,9 @@ const Content = ({ activeData, setCondition, condition }) => {
         <h1 className="text-left text-5xl font-bold mb-1 w-full relative p-1 overflow-hidden md:text-[7vw] md:mb-2 ">
           <p className="text">{activeData.heading}</p>
         </h1>
-        <h6 className="text-left text-2xl font-regular mb-6 w-full p-1 overflow-hidden md:text-4xl">
+        <h6 className="text-left text-2xl font-regular mb-4 w-full p-1 overflow-hidden md:text-4xl">
           <p className="text">{activeData.subHeading}</p>
         </h6>
-        <div className="w-full lg:text-xl lg:leading-[40px] text-xs font-medium text-left mb-8 p-1 overflow-hidden  md:text-base md:mb-12 ">
-          <p className="text">{activeData.text}</p>
-        </div>
         <div className="relative overflow-hidden p-4 ">
           <button className=" text cursor-pointer button rounded-xl outline-none px-8 py-2  font-medium  bg-[#4A6E6A]  md:px-10 md:py-4  ">
             Shop Now
