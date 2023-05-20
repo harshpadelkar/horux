@@ -27,7 +27,7 @@ const Content = ({ activeData, setCondition, condition }) => {
     });
 
     gsap.from('.text', {
-      y: 300,
+      y: 200,
       ease: 'power4.out',
       duration: 1,
       stagger: {
@@ -50,9 +50,9 @@ const Content = ({ activeData, setCondition, condition }) => {
         <h6 className="text-left text-2xl font-regular mb-6 w-full p-1 overflow-hidden md:text-4xl">
           <p className="text">{activeData.subHeading}</p>
         </h6>
-        <p className="w-full text-xs font-medium text-left mb-8 p-1 overflow-hidden  md:text-lg md:mb-12 ">
+        <div className="w-full lg:text-xl lg:leading-[40px] text-xs font-medium text-left mb-8 p-1 overflow-hidden  md:text-base md:mb-12 ">
           <p className="text">{activeData.text}</p>
-        </p>
+        </div>
         <div className="relative overflow-hidden p-4 ">
           <button className=" text cursor-pointer button rounded-xl outline-none px-8 py-2  font-medium  bg-[#4A6E6A]  md:px-10 md:py-4  ">
             Shop Now

@@ -11,7 +11,7 @@ const Contact = () => {
   return (
     <div
       style={{ height: '75vh' }}
-      className={` h-screen flex xl:flex-row  gap-10 overflow-hidden`}
+      className={` h-screen flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}

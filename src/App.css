@@ -8,11 +8,25 @@
   box-sizing: border-box;
 }
 
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+
 body {
   background: url(./assets/background.jpg) no-repeat;
   background-size: cover;
   background-position: initial;
-  /* background-color: #010103; */
+  overflow-x: hidden;
+  background-color: #010103;
 }
 
 .App {
@@ -38,13 +52,8 @@ body {
 }
 
 section {
-  padding: 0 7% 96px 7%;
-}
-
-@media (max-width: 1000px) {
-  section {
-    padding: 96px 7%;
-  }
+  padding: 0 7%;
+  margin-bottom: 180px;
 }
 
 @media (min-width: 600px) and (max-width: 915px) and (orientation: landscape) {
